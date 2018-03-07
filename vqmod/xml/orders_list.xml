@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification
+        xmlns="https://github.com/vqmod/vqmod"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd">
+    >
+    <id>Add wuunder icons</id>
+    <version>1.0</version>
+    <vqmver>2.6.3</vqmver>
+    <author>wuunder</author>
+    <file name="admin/view/template/sale/order_list.twig">
+        <operation info="add wuunder icons">
+            <search position="replace"><![CDATA[
+              <div style="min-width: 120px;">
+                ]]></search>
+            <add><![CDATA[
+              <div style="min-width: 170px;">
+                <ul class="wuunder-icons">
+                  {% if order.label_id is null %}
+                    {% if order.booking_url is null or order.booking_url is empty %}
+                        <a href="{{ order.generate_booking_url }}" title="{{ create_label }}"><img class="wuunder-icon" src="/admin/view/image/wuunder/create_label.png"/></a>
+                      {% else %}
+                        <a href="{{ order.booking_url }}" title="{{ create_label }}"><img class="wuunder-icon" src="/admin/view/image/wuunder/create_label.png" /></a>
+                    {% endif %}
+                  {% else %}
+                    <a href="{{ order.label_url }}" title="{{ download_label }}" target="_blank"><img class="wuunder-icon" src="/admin/view/image/wuunder/print_label.png" /></a>
+                    <a href="{{ order.label_tt_url }}" title=" {{ follow_shipment }}" target="_blank"><img class="wuunder-icon" src="/admin/view/image/wuunder/in_transit.png" /></a>
+                  {% endif %}
+                </ul>
+                ]]></add>
+        </operation>
+    </file>
+</modification>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification
+        xmlns="https://github.com/vqmod/vqmod"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://github.com/vqmod/vqmod https://raw.githubusercontent.com/vqmod/vqmod/master/vqmod.xsd">
+    <id>Add label info to order list</id>
+    <version>1.0</version>
+    <vqmver>2.6.3</vqmver>
+    <author>wuunder</author>
+    <file name="admin/controller/sale/order.php">
+        <operation info="add order info">
+            <search position="replace" offset="4"><![CDATA[
+            $results = $this->model_sale_order->getOrders($filter_data);
+                ]]></search>
+            <add><![CDATA[
+            $data['create_label'] = $this->load->controller('extension/module/wuunder/getCreateLabelMessage');
+            $data['download_label'] = $this->load->controller('extension/module/wuunder/getDownloadLabelMessage');
+            $data['follow_shipment'] = $this->load->controller('extension/module/wuunder/getFollowShipmentMessage');
+
+            $results = $this->model_sale_order->getOrders($filter_data);
+            $this->load->model('extension/module/wuunder');
+                foreach ($results as $result) {
+            $label_info = $this->load->controller('extension/module/wuunder/getLabelInfo', $result['order_id']);
+            if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' && $_SERVER['HTTPS']) {
+                $protocol = "https://";
+            } else {
+                $protocol = "http://";
+            }
+			$data['orders'][] = array(
+				'order_id'      => $result['order_id'],
+				'label_id'      => ($label_info ? $label_info['label_id'] : null),
+				'label_url'      => ($label_info ? $label_info['label_url'] : null),
+				'label_tt_url'      => ($label_info ? $label_info['label_tt_url'] : null),
+				'booking_url'      => ($label_info ? $label_info['booking_url'] : null),
+				'order_status_code' => $this->model_extension_module_wuunder->getOrderStatusCode($result['order_id']),
+				'generate_booking_url'  => $protocol . $this->request->server['SERVER_NAME'] . "/admin/index.php?route=extension/module/wuunder/generateBookingUrl&order=" . $result['order_id'] . "&user_token=" . $this->session->data['user_token'],
+                ]]></add>
+        </operation>
+        <operation info="add warning info">
+            <search position="replace"><![CDATA[
+            if (isset($this->request->post['selected'])) {
+                ]]></search>
+            <add><![CDATA[
+            if (array_key_exists("label", $_REQUEST) && $_REQUEST['label'] === "created") {
+                $data['success'] = $label_info = $this->load->controller('extension/module/wuunder/getLabelCreatedMessage');
+            }
+            if (isset($this->request->post['selected'])) {
+                ]]></add>
+        </operation>
+    </file>
+</modification>
