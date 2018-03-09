@@ -243,7 +243,7 @@ class ControllerExtensionModuleWuunder extends Controller {
             'picture' => $orderPicture,
             'customer_reference' => $order_id,
             'value' => $totalValue ? $totalValue : $defValue,
-            'kind' => null,
+            'kind' => "package",
             'length' => $defLength,
             'width' => $defWidth,
             'height' => $defHeight,
