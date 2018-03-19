@@ -1,10 +1,10 @@
-# [Wuunder](https://wearewuunder.com/) opencart plugin v3
+# Wuunder opencart plugin v3
 
 This plugin is meant to function with __version 3.0.2.0__ of [OpenCart.](https://www.opencart.com/index.php?route=common/home)
 The Wuunder plugin compatible with OpenCart __version 2.x.x.__ can be found [here.](https://github.com/kabisa/wuunder-webshopplugin-opencart)
 
-## Information ##
-Wuunder maakt het versturen en ontvangen van je pakket, pallet en document gemakkelijker, voordeliger en persoonlijker. Je verstuurt volledig automatisch je zendingen binnen Nederland en vanuit Nederland naar de rest van de wereld via meer dan 23 vervoerders zoals PostNL, DPD, DHL en GLS. Retouren boek je binnen Nederland en vanuit het buitenland naar Nederland in een handomdraai. Wel zo gemakkelijk!
+## Hello, we are [Wuunder](https://wearewuunder.com/) ##
+We make shipping any parcel, pallet and document easy, personal and efficient. As a business owner, you can book your shipment using your mobile, tablet or computer. We select the best price and pick up your parcel wherever you want. You and the receiver can both track and trace the shipment. You can also stay in contact with each other via our Wuunder chat. Everything without a contract. Why complicate things?
 
 ## Install ##
 ### Manual Install ###
