@@ -1,4 +1,14 @@
 # Change Log
+All notable changes to this project will be documented in this file.
+Please file changes under `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed` or `Security`.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/).
+
+## Unreleased
+
+## Released
+
+# Old Change Log
 
 ## [1.0.0](https://github.com/kabisa/wuunder-webshopplugin-opencart-v3/tree/1.0.0) (2018-03-09)
 
