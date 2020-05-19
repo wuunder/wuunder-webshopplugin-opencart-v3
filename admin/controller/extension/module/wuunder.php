@@ -271,10 +271,10 @@ class ControllerExtensionModuleWuunder extends Controller {
                 $webhookUrl = urlencode($protocol . $this->request->server['SERVER_NAME'] . "/index.php?route=extension/module/wuunder/webhook&order=" . $order_id . "&user_token=" . $booking_token);
 
                 if (intval($this->config->get('wuunder_api'))) {
-                    $apiUrl = 'https://api.wuunder.co/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
+                    $apiUrl = 'https://api.wearewuunder.com/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
                     $apiKey = $this->config->get('wuunder_live_key');
                 } else {
-                    $apiUrl = 'https://api-staging.wuunder.co/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
+                    $apiUrl = 'https://api-staging.wearewuunder.com/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
                     $apiKey = $this->config->get('wuunder_staging_key');
                 }
 
@@ -310,9 +310,9 @@ class ControllerExtensionModuleWuunder extends Controller {
 
                 if (!(substr($url, 0, 5) === "http:" || substr($url, 0, 6) === "https:")) {
                     if (intval($this->config->get('wuunder_api'))) {
-                        $url = 'https://api.wuunder.co' . $url;
+                        $url = 'https://api.wearewuunder.com' . $url;
                     } else {
-                        $url = 'https://api-staging.wuunder.co' . $url;
+                        $url = 'https://api-staging.wearewuunder.com' . $url;
                     }
                 }
                 header("Location: " . $url);
