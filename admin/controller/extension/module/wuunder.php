@@ -238,15 +238,14 @@ class ControllerExtensionModuleWuunder extends Controller {
         $defValue = 25 * 100;
 
         $source = array(
-            'product' => 'OpenCart V3 extension',
-            'version' => array(
-                'plugin' => '3.0',
-                'build' => '',
-            ),
-            'platform' => array(
-                'name' => 'OpenCart',
-                'build' => '',
-            ),
+            "product" => "Opencart 3 extension",
+            "version" => array(
+                "build" => "2.0",
+                "plugin" => "2.0"),
+            "platform" => array(
+                "name" => "OpenCart",
+                "build" => VERSION
+            )
         );
 
         return array(
