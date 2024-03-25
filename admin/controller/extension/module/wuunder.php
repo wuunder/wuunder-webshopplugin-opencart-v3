@@ -237,6 +237,17 @@ class ControllerExtensionModuleWuunder extends Controller {
         $defWeight = 20000;
         $defValue = 25 * 100;
 
+        $source = array(
+            "product" => "Opencart 3 extension",
+            "version" => array(
+                "build" => "2.0",
+                "plugin" => "2.0"),
+            "platform" => array(
+                "name" => "OpenCart",
+                "build" => VERSION
+            )
+        );
+
         return array(
             'description' => implode(", ", $orderDescriptions),
             'personal_message' => $orderData['comment'],
@@ -249,7 +260,8 @@ class ControllerExtensionModuleWuunder extends Controller {
             'height' => $defHeight,
             'weight' => $defWeight,
             'delivery_address' => $customerAdr,
-            'pickup_address' => $pickupAdr
+            'pickup_address' => $pickupAdr,
+            'source' => $source,
         );
     }
 
@@ -271,10 +283,10 @@ class ControllerExtensionModuleWuunder extends Controller {
                 $webhookUrl = urlencode($protocol . $this->request->server['SERVER_NAME'] . "/index.php?route=extension/module/wuunder/webhook&order=" . $order_id . "&user_token=" . $booking_token);
 
                 if (intval($this->config->get('wuunder_api'))) {
-                    $apiUrl = 'https://api.wearewuunder.com/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
+                    $apiUrl = 'https://api.wearewuunder.com/api/v2/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
                     $apiKey = $this->config->get('wuunder_live_key');
                 } else {
-                    $apiUrl = 'https://api-staging.wearewuunder.com/api/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
+                    $apiUrl = 'https://api-staging.wearewuunder.com/api/v2/bookings?redirect_url=' . $redirectUrl . '&webhook_url=' . $webhookUrl;
                     $apiKey = $this->config->get('wuunder_staging_key');
                 }
 
