@@ -20,7 +20,8 @@ $_['text_phone_number'] = 'Telefoonnummer';
 $_['text_street_name'] = 'Straat';
 $_['text_house_number'] = 'Huisnummer';
 $_['text_zip_code'] = 'Postcode';
-$_['text_country'] = 'land code (ISO 3166-1 alpha-2 format)';
+$_['text_country'] = 'Land';
+$_['text_baseurl']      = 'Baseurl';
 $_['text_advanced_section'] = 'Geadvanceerde instellingen';
 $_['text_custom_field_housenumber'] = 'Custom field Huisnummer (id)';
 
