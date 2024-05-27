@@ -20,7 +20,8 @@ $_['text_phone_number']      = 'Phonenumber';
 $_['text_street_name']      = 'Street';
 $_['text_house_number']      = 'House number';
 $_['text_zip_code']      = 'Zip code';
-$_['text_country']      = 'Country code (ISO 3166-1 alpha-2 format)';
+$_['text_country']      = 'Country';
+$_['text_baseurl']      = 'Baseurl';
 $_['text_advanced_section'] = 'Advanced settings';
 $_['text_custom_field_housenumber'] = 'Custom field Housenumber (id)';
 

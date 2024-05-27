@@ -32,7 +32,7 @@
                             <label class="col-sm-2 control-label"
                                    for="input-status"> {{ entry_status }} </label>
                             <div class="col-sm-10">
-                                <select name="wuunder_api" id="input-status" class="form-control">
+                                <select name="module_wuunder_api" id="input-status" class="form-control">
                                     {% if wuunder_api %}
                                         <option value="1" selected="selected">{{ live_api }}</option>
                                         <option value="0">{{ staging_api }}</option>
@@ -47,7 +47,7 @@
                             <label class="col-sm-2 control-label"
                                    for="input-staging-key">{{ text_staging_api }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="input-staging-key" name="wuunder_staging_key"
+                                <input type="text" id="input-staging-key" name="module_wuunder_staging_key"
                                        class="form-control" value="{{ staging_key }}"/>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                             <label class="col-sm-2 control-label"
                                    for="input-live-key">{{ text_live_api }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="input-live-key" name="wuunder_live_key" class="form-control"
+                                <input type="text" id="input-live-key" name="module_wuunder_live_key" class="form-control"
                                        value="{{ live_key}}"/>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_business">{{ text_business }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_business" name="wuunder_business" class="form-control"
+                                <input type="text" id="wuunder_business" name="module_wuunder_business" class="form-control"
                                        value="{{ business }}"/>
                             </div>
                         </div>
@@ -71,7 +71,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_email_address">{{ text_email_address }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_email_address" name="wuunder_email_address"
+                                <input type="text" id="wuunder_email_address" name="module_wuunder_email_address"
                                        class="form-control" value="{{ email_address }}"/>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_family_name">{{ text_family_name }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_family_name" name="wuunder_family_name"
+                                <input type="text" id="wuunder_family_name" name="module_wuunder_family_name"
                                        class="form-control" value="{{ family_name }}"/>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_given_name">{{ text_given_name }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_given_name" name="wuunder_given_name"
+                                <input type="text" id="wuunder_given_name" name="module_wuunder_given_name"
                                        class="form-control" value="{{ given_name }}"/>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_locality">{{ text_locality }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_locality" name="wuunder_locality" class="form-control"
+                                <input type="text" id="wuunder_locality" name="module_wuunder_locality" class="form-control"
                                        value="{{ locality }}"/>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_phone_number">{{ text_phone_number }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_phone_number" name="wuunder_phone_number"
+                                <input type="text" id="wuunder_phone_number" name="module_wuunder_phone_number"
                                        class="form-control" value="{{ phone_number }}"/>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_street_name">{{ text_street_name }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_street_name" name="wuunder_street_name"
+                                <input type="text" id="wuunder_street_name" name="module_wuunder_street_name"
                                        class="form-control" value="{{ street_name }}"/>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_house_number">{{ text_house_number }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_house_number" name="wuunder_house_number"
+                                <input type="text" id="wuunder_house_number" name="module_wuunder_house_number"
                                        class="form-control" value="{{ house_number }}"/>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_zip_code">{{ text_zip_code }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_zip_code" name="wuunder_zip_code" class="form-control"
+                                <input type="text" id="wuunder_zip_code" name="module_wuunder_zip_code" class="form-control"
                                        value="{{ zip_code }}"/>
                             </div>
                         </div>
@@ -135,14 +135,31 @@
                             <label class="col-sm-2 control-label"
                                    for="wuunder_country">{{ text_country }}</label>
                             <div class="col-sm-10">
-                                <input type="text" id="wuunder_country" name="wuunder_country" class="form-control"
-                                       value="{{ country }}"/>
+                                <select name="module_wuunder_country" id="wuunder_country" class="form-control">
+                                    <option value="">{{ text_select }}</option>
+                                    {% for single_country in countries %}
+                                    {% if single_country.iso_code_2 == country %}
+                                    <option value="{{ single_country.iso_code_2 }}" selected="selected">{{ single_country.name }}</option>
+                                    {% else %}
+                                    <option value="{{ single_country.iso_code_2 }}">{{ single_country.name }}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"
+                                   for="wuunder_baseurl">{{ text_baseurl }}</label>
+                            <div class="col-sm-10">
+                                <input type="text" id="wuunder_baseurl" name="module_wuunder_baseurl" class="form-control"
+                                       value="{{ baseurl }}"/>
                             </div>
                         </div>
 
                         <div class="form-group">
                           <label class="col-sm-2 control-label"
-                                 for="wuunder_status">Status</label>
+                                 for="module_wuunder_status">Status</label>
                           <div class="col-sm-10">
                             <select name="module_wuunder_status" id="input-status" class="form-control">
                               {% if module_wuunder_status %}
@@ -162,7 +179,7 @@
                                 <label class="col-sm-2 control-label"
                                        for="wuunder_custom_housenumber">{{ text_custom_field_housenumber }}</label>
                                 <div class="col-sm-10">
-                                    <input type="text" id="wuunder_custom_housenumber" name="wuunder_custom_housenumber"
+                                    <input type="text" id="wuunder_custom_housenumber" name="module_wuunder_custom_housenumber"
                                            class="form-control" value="{{ custom_housenumber }}"/>
                                 </div>
                             </div>
